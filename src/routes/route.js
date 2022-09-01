@@ -11,4 +11,4 @@ router.delete("/deleteUser/:userId",Middleware.validationToken, userController.d
 
 
 
-module.exports = router;
+module.exports = router
