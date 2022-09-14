@@ -17,10 +17,13 @@ const authenticate = function(req, res, next) {
 
         let decodedToken = jwt.verify(
             token,
-            "project-blog group 33",
+            "project-blog team 33",
             function(err, decode) {
                 if (err) {
-                    return res.send("invalid");
+                    return res.status(500).send({
+                        status: false,
+                        msg: "Invalid token"
+                    });
                 }
                 return decode;
             }
